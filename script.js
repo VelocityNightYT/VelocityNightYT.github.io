@@ -1,5 +1,13 @@
-const button = document.getElementById("learnMore");
+document.querySelectorAll(".button, [data-scroll]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+        const targetSelector = button.getAttribute("href");
 
-button.addEventListener("click", function () {
-    alert("Welcome to my website! 🚀");
+        if (targetSelector && targetSelector.startsWith("#")) {
+            const target = document.querySelector(targetSelector);
+            if (target) {
+                event.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+    });
 });
