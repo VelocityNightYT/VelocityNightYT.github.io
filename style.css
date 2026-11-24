@@ -261,6 +261,19 @@ footer {
     border-top: 1px solid #292929;
 }
 
+/* Strong temporary blur while scrolling; JavaScript toggles this class. */
+body main,
+body nav,
+body footer {
+    transition: filter 100ms linear;
+}
+
+body.is-scrolling main,
+body.is-scrolling nav,
+body.is-scrolling footer {
+    filter: blur(3px);
+}
+
 /* Scroll reveal: only opacity and transform are animated. */
 
 html.reveal-ready [data-reveal],
