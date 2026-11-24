@@ -201,12 +201,44 @@ nav {
     border-radius: 16px;
     padding: 28px 22px;
     text-align: left;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    border-color: #4a4a4a;
+    border-color: #ff4dff;
+    box-shadow:
+        0 0 8px rgba(255, 77, 255, 0.8),
+        0 0 18px rgba(77, 240, 255, 0.55),
+        0 0 30px rgba(255, 230, 77, 0.35);
+    animation: rainbow-glow 4s linear infinite;
+}
+
+@keyframes rainbow-glow {
+    0% {
+        border-color: #ff4d4d;
+        box-shadow: 0 0 8px rgba(255, 77, 77, 0.8), 0 0 20px rgba(255, 77, 77, 0.45);
+    }
+    20% {
+        border-color: #ffe14d;
+        box-shadow: 0 0 8px rgba(255, 225, 77, 0.8), 0 0 20px rgba(255, 225, 77, 0.45);
+    }
+    40% {
+        border-color: #4dff88;
+        box-shadow: 0 0 8px rgba(77, 255, 136, 0.8), 0 0 20px rgba(77, 255, 136, 0.45);
+    }
+    60% {
+        border-color: #4ddfff;
+        box-shadow: 0 0 8px rgba(77, 223, 255, 0.8), 0 0 20px rgba(77, 223, 255, 0.45);
+    }
+    80% {
+        border-color: #b84dff;
+        box-shadow: 0 0 8px rgba(184, 77, 255, 0.8), 0 0 20px rgba(184, 77, 255, 0.45);
+    }
+    100% {
+        border-color: #ff4d4d;
+        box-shadow: 0 0 8px rgba(255, 77, 77, 0.8), 0 0 20px rgba(255, 77, 77, 0.45);
+    }
 }
 
 .card h3 {
