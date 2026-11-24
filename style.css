@@ -40,26 +40,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(21, 21, 21, 0.95);
-    border-bottom: 1px solid #292929;
+    background: rgba(155, 211, 255, 0.94);
+    border-bottom: 1px solid rgba(77, 220, 255, 0.7);
     position: sticky;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(6px);
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-nav:hover {
-    background: rgba(155, 211, 255, 0.9);
-    box-shadow: 0 4px 24px rgba(77, 220, 255, 0.35);
-}
-
-nav:hover .nav-links a {
-    color: #101820;
-}
-
-nav:hover .nav-links a:hover {
-    color: #fff;
+    box-shadow: 0 4px 20px rgba(77, 220, 255, 0.22);
 }
 
 .logo {
@@ -89,13 +76,32 @@ nav:hover .nav-links a:hover {
 }
 
 .nav-links a {
-    color: #aaa;
+    position: relative;
+    color: #101820;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background: #101820;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
 .nav-links a:hover {
-    color: white;
+    color: #fff;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    background: #fff;
 }
 
 /* Hero */
