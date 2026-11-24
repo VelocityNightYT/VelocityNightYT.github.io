@@ -46,6 +46,20 @@ nav {
     top: 0;
     z-index: 100;
     backdrop-filter: blur(6px);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+    background: rgba(155, 211, 255, 0.9);
+    box-shadow: 0 4px 24px rgba(77, 220, 255, 0.35);
+}
+
+nav:hover .nav-links a {
+    color: #101820;
+}
+
+nav:hover .nav-links a:hover {
+    color: #fff;
 }
 
 .logo {
