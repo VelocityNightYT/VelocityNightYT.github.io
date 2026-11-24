@@ -229,6 +229,25 @@ footer {
     border-top: 1px solid #292929;
 }
 
+/* Scroll reveal: only opacity and transform are animated. */
+
+html.reveal-ready [data-reveal],
+html.reveal-ready [data-reveal-card] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+html.reveal-ready [data-reveal-card] {
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+html.reveal-ready [data-reveal].is-revealed,
+html.reveal-ready [data-reveal-card].is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 640px) {
     nav {
         height: auto;
