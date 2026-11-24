@@ -55,3 +55,13 @@ document.addEventListener("click", (event) => {
         cancelAutoScroll();
     }
 }, true);
+
+// Briefly blur the page content while scrolling to create a motion-blur effect.
+let scrollBlurTimer;
+window.addEventListener("scroll", () => {
+    document.body.classList.add("is-scrolling");
+    window.clearTimeout(scrollBlurTimer);
+    scrollBlurTimer = window.setTimeout(() => {
+        document.body.classList.remove("is-scrolling");
+    }, 120);
+}, { passive: true });
